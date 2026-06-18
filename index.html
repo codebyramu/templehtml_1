@@ -22,6 +22,18 @@
     </div>
   </div>
 
+  <!-- Fluid SVG Filter -->
+  <svg style="display:none;">
+    <filter id="fluid-wave">
+      <!-- Fractal noise for fluid distortion -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+      <!-- Color matrix for a slight gooey/diffused edge -->
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" in="SourceGraphic" result="goo" />
+      <!-- Displacement map to push pixels around based on noise -->
+      <feDisplacementMap in="goo" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
   <!-- Audio -->
   <audio id="flute-audio" src="public/audio/flute.mp3" loop></audio>
 
@@ -31,7 +43,7 @@
       <li><a href="#sec1">About</a></li>
       <li><a href="#sec2">Bhaskararaya</a></li>
       <li><a href="#sec3">Temples</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#sec6">Contact</a></li>
     </ul>
   </nav>
 
@@ -162,15 +174,20 @@
             <img src="public/images/temples/memorial.jpg" class="showcase-img">
             <div class="card-gradient"></div>
             <div class="card-content">
-              <h2 class="card-title cormorant-font">Bhaskararaya Memorial</h2>
-              <div class="tags"><span class="tag">Tribute</span><span class="tag">Legacy</span></div>
-              <div class="caption-left">Honoring the Past</div>
-              <div class="caption-right">Enduring Devotion</div>
+              <h2 class="card-title cormorant-font">Shri Bhaskararaya Memorial</h2>
+              <div class="tags"><span class="tag">Samadhi</span><span class="tag">Saint</span></div>
+              <div class="caption-left">Resting Place</div>
+              <div class="caption-right">Srividya Master</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="section" id="sec6">
+    <img class="media-img" alt="Page 6">
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
   </div>
 
   <script>

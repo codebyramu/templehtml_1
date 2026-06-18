@@ -303,10 +303,10 @@ function render() {
     
     imageBox.style.setProperty('--bx', `${bCurrentX}px`);
     imageBox.style.setProperty('--by', `${bCurrentY}px`);
-    // Scale radii slightly for a better inner bulge feel
-    imageBox.style.setProperty('--br1', `${currentR1 * 0.9}px`);
-    imageBox.style.setProperty('--br2', `${currentR2 * 0.9}px`);
-    imageBox.style.setProperty('--br3', `${currentR3 * 0.9}px`);
+    // Scale radii down to make the bulge circles smaller
+    imageBox.style.setProperty('--br1', `${currentR1 * 0.4}px`);
+    imageBox.style.setProperty('--br2', `${currentR2 * 0.4}px`);
+    imageBox.style.setProperty('--br3', `${currentR3 * 0.4}px`);
   }
   
   requestAnimationFrame(render);
