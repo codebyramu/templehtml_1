@@ -499,6 +499,8 @@ html, body {
 /* --- Contact Page Styles (sec6) --- */
 #sec5 {
   height: 400vh; /* Scroll trap length */
+  overflow: visible; /* CRITICAL: overrides .section's overflow:hidden which breaks position: sticky! */
+  display: block; /* CRITICAL: overrides .section's flex centering to prevent massive black gaps! */
 }
 #sec5 .sticky-container {
   position: sticky;

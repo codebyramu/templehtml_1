@@ -163,22 +163,31 @@ setInterval(() => {
   targetR3 = 80 + Math.random() * 100;
 }, 400);
 
-function handleMove(e, sec) {
-  const rect = sec.getBoundingClientRect();
-  // Get correct coordinate depending on touch or mouse
-  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+function handleMove(e, section) {
+  if (e.touches && e.touches.length > 0) {
+    e.clientX = e.touches[0].clientX;
+    e.clientY = e.touches[0].clientY;
+  }
   
-  targetX = clientX - rect.left;
-  targetY = clientY - rect.top;
+  // To handle sticky containers properly, calculate mouse position relative to the video itself
+  const vid = section.querySelector('.media-vid');
+  let rect;
+  if (vid) {
+    rect = vid.getBoundingClientRect();
+  } else {
+    rect = section.getBoundingClientRect();
+  }
   
-  if (activeSection !== sec) {
-    activeSection = sec;
+  targetX = e.clientX - rect.left;
+  targetY = e.clientY - rect.top;
+  
+  if (activeSection !== section) {
+    activeSection = section;
     
-    // Show video immediately for this section, hide others
+    // Hide others
     sections.forEach(s => {
-      const vid = s.querySelector('.media-vid');
-      if (vid) vid.style.opacity = (s === activeSection) ? '1' : '0';
+      const v = s.querySelector('.media-vid');
+      if (v) v.style.opacity = (s === activeSection) ? '1' : '0';
     });
     
     // Snap immediately on first enter to prevent mask flying across the screen
