@@ -241,19 +241,50 @@ if (listContainer) {
     document.querySelectorAll('.bulge-img').forEach((img, i) => img.classList.toggle('active', i === closestIndex));
   }
 
-  // Update on scroll inside the list
-  listContainer.addEventListener('scroll', updateShowcaseOnScroll);
+  // Handle sticky scroll sequence based on window scroll
+  const sec5 = document.getElementById('sec5');
+  window.addEventListener('scroll', () => {
+    if (sec5) {
+      const rect = sec5.getBoundingClientRect();
+      
+      // Check if sec5 is currently the sticky active section in viewport
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        // Calculate progress from 0 to 1
+        const scrollableDistance = rect.height - window.innerHeight;
+        const scrolled = -rect.top;
+        let progress = scrolled / scrollableDistance;
+        
+        // Clamp progress
+        progress = Math.max(0, Math.min(1, progress));
+        
+        // Programmatically scroll the list container
+        const maxScroll = listContainer.scrollHeight - listContainer.clientHeight;
+        listContainer.scrollTop = progress * maxScroll;
+        
+        // Trigger visual updates
+        updateShowcaseOnScroll();
+      } else if (rect.top > 0) {
+        // Reset to start if above
+        listContainer.scrollTop = 0;
+        updateShowcaseOnScroll();
+      } else if (rect.bottom < window.innerHeight) {
+        // Force to end if below
+        listContainer.scrollTop = listContainer.scrollHeight;
+        updateShowcaseOnScroll();
+      }
+    }
+  });
   
   // Also update once on load to establish initial state
   updateShowcaseOnScroll();
 
-  // Click to automatically scroll to an item perfectly centered
-  items.forEach((item) => {
+  // Click to automatically scroll to an item perfectly centered (disabled in sticky scroll mode as it interferes with window scroll mapping)
+  /* items.forEach(item => {
     item.addEventListener('click', () => {
       const scrollPos = item.offsetTop - listContainer.clientHeight / 2 + item.clientHeight / 2;
       listContainer.scrollTo({ top: scrollPos, behavior: 'smooth' });
     });
-  });
+  }); */
 }
 
 // Variables for bulge tracking

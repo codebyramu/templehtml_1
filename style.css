@@ -401,8 +401,7 @@ html, body {
   margin: 0;
   padding: 30vh 0; /* Creates scrollable space */
   height: 60vh;
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
+  overflow-y: hidden; /* Hide scroll so user MUST scroll the window */
   position: relative;
   /* Removed mask-image to fix visibility issue on some browsers */
 }
@@ -498,6 +497,17 @@ html, body {
 }
 
 /* --- Contact Page Styles (sec6) --- */
+#sec5 {
+  height: 400vh; /* Scroll trap length */
+}
+#sec5 .sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 #sec6 {
   background-color: #050505; /* Fallback background in case media fails */
   position: relative;
