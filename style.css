@@ -386,26 +386,25 @@ html, body {
 }
 
 .showcase-left {
+  position: relative;
   width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 5%;
-  pointer-events: auto; /* Re-enable pointer events so it can be scrolled */
+  padding-left: 80px;
+  pointer-events: auto; /* Required to intercept clicks */
+  z-index: 9999; /* Force text to the absolute front */
 }
 
 .scrollable-list {
-  height: 60vh;
-  width: 100%;
-  overflow-y: scroll; /* force scrolling logic but hide bar */
   list-style: none;
-  padding: 30vh 0; /* padding so first and last can reach center */
   margin: 0;
+  padding: 30vh 0; /* Creates scrollable space */
+  height: 60vh;
+  overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-  /* This mask removes the harsh 'box' cut-off at the top and bottom */
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  position: relative;
+  /* Removed mask-image to fix visibility issue on some browsers */
 }
 
 .scrollable-list::-webkit-scrollbar {
@@ -499,6 +498,12 @@ html, body {
 }
 
 /* --- Contact Page Styles (sec6) --- */
+#sec6 {
+  background-color: #050505; /* Fallback background in case media fails */
+  position: relative;
+  z-index: 5;
+}
+
 .contact-content {
   max-width: 1000px;
   width: 90%;
