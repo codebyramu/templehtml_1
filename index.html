@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Video Blob Interaction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loading-text" id="lt1">LOADING TEMPLE</div>
+      <div class="loading-text" id="lt2">GATHERING HISTORY</div>
+      <div class="loading-text" id="lt3">ENTERING TEMPLE</div>
+      <div class="loading-bar-container"><div class="loading-bar"></div></div>
+      <div id="tap-to-enter">Tap to Enter</div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="flute-audio" src="public/audio/flute.mp3" loop></audio>
+
+  <!-- Navigation Dashboard -->
+  <nav id="dashboard">
+    <ul>
+      <li><a href="#sec1">About</a></li>
+      <li><a href="#sec2">Bhaskararaya</a></li>
+      <li><a href="#sec3">Temples</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="section" id="sec1">
+    <img class="media-img" alt="Page 1">
+    <video src="public/videos/hero-bg.mp4" class="hero-bg" loop muted playsinline autoplay preload="auto"></video>
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
+    <div class="page-content">
+      <h1 class="split-text hero-title">Welcome to Bhaskararajapuram</h1>
+      <div class="subtitle-wrapper fade-up-text">
+        <h2 class="hero-subtitle active">A village, quaint yet serene, on the banks of River Cauvery...</h2>
+        <h2 class="hero-subtitle">Where the Kaveri, Arasalar, and Vennaru rivers meet in sacred confluence.</h2>
+        <h2 class="hero-subtitle">Home to the Samadhi of Shri Bhaskararaya, the saint-scholar of Srividya.</h2>
+        <h2 class="hero-subtitle">Where the Lalita Sahasranama Bhashya was completed by a devoted sage.</h2>
+        <h2 class="hero-subtitle">Guardian of three ancient temples — Bhaskareswarar, Kothanda Ramaswamy, and Vishnu Durgai.</h2>
+        <h2 class="hero-subtitle">A living legacy of devotion, carried forward by the Srinivas Rama Trust.</h2>
+        <h2 class="hero-subtitle">Once the home of an 18th-century master of Tantra, Srividya, and Vedanta.</h2>
+        <h2 class="hero-subtitle">Named in honor of the foremost commentator on the Goddess Lalita's thousand names.</h2>
+        <h2 class="hero-subtitle">A spiritual epicenter for Srividya seekers across generations.</h2>
+        <h2 class="hero-subtitle">Where ancient rivers and ancient wisdom flow as one.</h2>
+      </div>
+      <p class="fade-up-text paragraph-text">
+        Bhaskararajapuram is a village on the banks of the River Cauvery, near Kumbakonam, located beautifully at the confluence (Sangamam) of the Kaveri, Arasalar, and Vennaru rivers. It stands as a testament to deep spiritual heritage and enduring devotion.<br><br>
+        The Srinivas Rama Trust plays a crucial role in the maintenance of the village's sacred spaces and the organization of annual celebrations, keeping the rich traditions alive for future generations.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="sec2">
+    <img class="media-img" alt="Page 2">
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
+  </div>
+
+  <div class="section" id="sec3">
+    <img class="media-img" alt="Page 3">
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
+  </div>
+
+  <div class="section" id="sec4">
+    <img class="media-img" alt="Page 4">
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
+  </div>
+
+  <div class="section" id="sec5">
+    <img class="media-img" alt="Page 5">
+    <video class="media-vid" loop muted playsinline preload="auto"></video>
+    
+    <div class="showcase-overlay">
+      <div class="showcase-left">
+        <ul class="scrollable-list">
+          <li class="active">Bhaskararajapuram</li>
+          <li>Triveni Sangamam</li>
+          <li>Shri Bhaskareswarar Temple</li>
+          <li>Shri Kothanda Ramaswamy Temple</li>
+          <li>Shri Vishnu Durgai Temple</li>
+          <li>Shri Bhaskararaya Memorial</li>
+        </ul>
+      </div>
+      <div class="showcase-right">
+        <div class="image-box">
+          <!-- Bulge/Magnify Effect Layer -->
+          <div class="bulge-wrapper">
+            <img src="public/images/temples/village.jpg" class="bulge-img active">
+            <img src="public/images/temples/sangamam.jpg" class="bulge-img">
+            <img src="public/images/temples/bhaskareswarar.jpg" class="bulge-img">
+            <img src="public/images/temples/ramaswamy.jpg" class="bulge-img">
+            <img src="public/images/temples/durgai.jpg" class="bulge-img">
+            <img src="public/images/temples/memorial.jpg" class="bulge-img">
+          </div>
+          
+          <!-- 0: Village -->
+          <div class="showcase-layer active">
+            <img src="public/images/temples/village.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">Village Heritage</h2>
+              <div class="tags"><span class="tag">Historic</span><span class="tag">Sacred</span></div>
+              <div class="caption-left">Deep spiritual roots</div>
+              <div class="caption-right">Kumbakonam Area</div>
+            </div>
+          </div>
+          <!-- 1: Sangamam -->
+          <div class="showcase-layer">
+            <img src="public/images/temples/sangamam.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">River Sangamam</h2>
+              <div class="tags"><span class="tag">Nature</span><span class="tag">Confluence</span></div>
+              <div class="caption-left">Kaveri, Arasalar, Vennaru</div>
+              <div class="caption-right">Holy Waters</div>
+            </div>
+          </div>
+          <!-- 2: Bhaskareswarar -->
+          <div class="showcase-layer">
+            <img src="public/images/temples/bhaskareswarar.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">Bhaskareswarar Temple</h2>
+              <div class="tags"><span class="tag">Lord Shiva</span><span class="tag">Ancient</span></div>
+              <div class="caption-left">Divine Presence</div>
+              <div class="caption-right">Main Deity</div>
+            </div>
+          </div>
+          <!-- 3: Ramaswamy -->
+          <div class="showcase-layer">
+            <img src="public/images/temples/ramaswamy.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">Kothanda Ramaswamy</h2>
+              <div class="tags"><span class="tag">Lord Rama</span><span class="tag">Heritage</span></div>
+              <div class="caption-left">Divine Avatar</div>
+              <div class="caption-right">Eternal Grace</div>
+            </div>
+          </div>
+          <!-- 4: Durgai -->
+          <div class="showcase-layer">
+            <img src="public/images/temples/durgai.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">Goddess Durgai</h2>
+              <div class="tags"><span class="tag">Devotion</span><span class="tag">Power</span></div>
+              <div class="caption-left">Protector Deity</div>
+              <div class="caption-right">Sacred Shrine</div>
+            </div>
+          </div>
+          <!-- 5: Memorial -->
+          <div class="showcase-layer">
+            <img src="public/images/temples/memorial.jpg" class="showcase-img">
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <h2 class="card-title cormorant-font">Bhaskararaya Memorial</h2>
+              <div class="tags"><span class="tag">Tribute</span><span class="tag">Legacy</span></div>
+              <div class="caption-left">Honoring the Past</div>
+              <div class="caption-right">Enduring Devotion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dynamically assign correct assets based on device type (Mobile vs PC)
+    const isMobile = window.innerWidth <= 768;
+    const folderName = isMobile ? 'mobile_overlayimagevideo' : 'pc_overlayimagevideo';
+    const cacheBuster = new Date().getTime(); // Prevent browser caching issues
+    
+    document.querySelectorAll('.media-img').forEach((img, idx) => {
+      img.src = `public/images/${folderName}/page_${idx + 1}.png?v=${cacheBuster}`;
+    });
+    document.querySelectorAll('.media-vid').forEach((vid, idx) => {
+      vid.src = `public/images/${folderName}/page_${idx + 1}.mp4?v=${cacheBuster}`;
+      vid.load(); // Ensure new source is loaded
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
